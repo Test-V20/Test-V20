@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{mindmap, trees}
+\usepackage{xcolor} % For custom colors
+
+\definecolor{NvidiaGreen}{RGB}{116, 185, 26} % Nvidia's brand color
+
+\begin{document}
+
+\begin{tikzpicture}[
+    mindmap, 
+    concept color=NvidiaGreen!50,
+    text=white,
+    every node/.style={font=\bfseries\sffamily, align=center}, 
+    level 1 concept/.append style={level distance=4cm},
+    level 2 concept/.append style={level distance=2.5cm}
+]
+
+\node[root concept] {Nvidia's Meteoric Rise} 
+    child[concept color=NvidiaGreen] {node[level 1 concept] {Humble Beginnings}
+        child {node[level 2 concept] {Founded in 1993}}
+        child {node[level 2 concept] {Jensen Huang (Ex-Denny's)}}
+    }
+    child[concept color=NvidiaGreen!70] {node[level 1 concept] {GPU Pioneer}
+        child {node[level 2 concept] {GeForce 256 (1st GPU)}}
+        child {node[level 2 concept] {Revolutionized Graphics}}
+    }
+    child[concept color=NvidiaGreen] {node[level 1 concept] {AI Focus}
+        child {node[level 2 concept] {CUDA Platform (2006)}}
+        child {node[level 2 concept] {Deep AI Integration}}
+    }
+    child[concept color=NvidiaGreen!70] {node[level 1 concept] {CUDA Power}
+        child {node[level 2 concept] {Empowered AI Developers}}
+        child {node[level 2 concept] {Became Industry Standard}}
+    }
+    child[concept color=NvidiaGreen] {node[level 1 concept] {Market Leader}
+        child {node[level 2 concept] {Most Valuable in 2024}}
+        child {node[level 2 concept] {Diverse Applications}}
+    }
+    child[concept color=NvidiaGreen!70] {node[level 1 concept] {Stock Split}
+        child {node[level 2 concept] {10:1 Split for Affordability}}
+        child {node[level 2 concept] {Fueled by AI Demand}}
+    };
+
+\end{tikzpicture}
+
+\end{document}
