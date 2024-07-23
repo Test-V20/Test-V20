@@ -1,48 +1,41 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{tikz}
-\usetikzlibrary{mindmap, trees}
-\usepackage{xcolor} % For custom colors
-
-\definecolor{NvidiaGreen}{RGB}{116, 185, 26} % Nvidia's brand color
+\usetikzlibrary{mindmap}
 
 \begin{document}
 
-\begin{tikzpicture}[
-    mindmap, 
-    concept color=NvidiaGreen!50,
-    text=white,
-    every node/.style={font=\bfseries\sffamily, align=center}, 
-    level 1 concept/.append style={level distance=4cm},
-    level 2 concept/.append style={level distance=2.5cm}
-]
+\begin{tikzpicture}[mindmap,
+    grow cyclic,
+    every node/.style={concept, execute at begin node=\hskip0pt},
+    root concept/.append style={concept color=blue!50, font=\Large\bfseries},
+    level 1/.append style={level distance=5cm, sibling angle=60, concept color=blue!40},
+    level 2/.append style={level distance=3cm, sibling angle=45, concept color=blue!30}]
 
-\node[root concept] {Nvidia's Meteoric Rise} 
-    child[concept color=NvidiaGreen] {node[level 1 concept] {Humble Beginnings}
-        child {node[level 2 concept] {Founded in 1993}}
-        child {node[level 2 concept] {Jensen Huang (Ex-Denny's)}}
+  \node[root concept] {Nvidia's Meteoric Rise}
+    child { node {Humble Beginnings}
+      child { node {Founded in 1993 by Jensen Huang} }
+      child { node {Huang: Former Denny's waiter} }
     }
-    child[concept color=NvidiaGreen!70] {node[level 1 concept] {GPU Pioneer}
-        child {node[level 2 concept] {GeForce 256 (1st GPU)}}
-        child {node[level 2 concept] {Revolutionized Graphics}}
+    child { node {GPU Pioneer}
+      child { node {Launched GeForce 256} }
+      child { node {Revolutionized graphics} }
     }
-    child[concept color=NvidiaGreen] {node[level 1 concept] {AI Focus}
-        child {node[level 2 concept] {CUDA Platform (2006)}}
-        child {node[level 2 concept] {Deep AI Integration}}
+    child { node {Strategic Shift to AI}
+      child { node {Released CUDA in 2006} }
+      child { node {AI ecosystem integration} }
     }
-    child[concept color=NvidiaGreen!70] {node[level 1 concept] {CUDA Power}
-        child {node[level 2 concept] {Empowered AI Developers}}
-        child {node[level 2 concept] {Became Industry Standard}}
+    child { node {CUDA Platform}
+      child { node {GPU power for AI} }
+      child { node {Default for AI developers} }
     }
-    child[concept color=NvidiaGreen] {node[level 1 concept] {Market Leader}
-        child {node[level 2 concept] {Most Valuable in 2024}}
-        child {node[level 2 concept] {Diverse Applications}}
+    child { node {Market Dominance}
+      child { node {Most valuable in 2024} }
+      child { node {Wide digital applications} }
     }
-    child[concept color=NvidiaGreen!70] {node[level 1 concept] {Stock Split}
-        child {node[level 2 concept] {10:1 Split for Affordability}}
-        child {node[level 2 concept] {Fueled by AI Demand}}
+    child { node {10:1 Stock Split}
+      child { node {More affordable shares} }
+      child { node {Growing AI investor demand} }
     };
-
 \end{tikzpicture}
-
 \end{document}
